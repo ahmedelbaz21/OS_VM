@@ -1,0 +1,530 @@
+
+
+1. Layout
+[
+  {
+    "table_name": "Attendance",
+    "column_name": "id",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": "nextval('\"Attendance_id_seq\"'::regclass)"
+  },
+  {
+    "table_name": "Attendance",
+    "column_name": "DelegateID",
+    "data_type": "character varying",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Attendance",
+    "column_name": "Date",
+    "data_type": "date",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Attendance",
+    "column_name": "Status",
+    "data_type": "character varying",
+    "is_nullable": "YES",
+    "column_default": "'Absent'::character varying"
+  },
+  {
+    "table_name": "Attendance_View",
+    "column_name": "id",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Attendance_View",
+    "column_name": "DelegateID",
+    "data_type": "character varying",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Attendance_View",
+    "column_name": "Date",
+    "data_type": "date",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Attendance_View",
+    "column_name": "Status",
+    "data_type": "character varying",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Buses",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Buses",
+    "column_name": "RouteName",
+    "data_type": "text",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Buses",
+    "column_name": "Capacity",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": "25"
+  },
+  {
+    "table_name": "Buses",
+    "column_name": "CurrentCount",
+    "data_type": "bigint",
+    "is_nullable": "YES",
+    "column_default": "'0'::bigint"
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "CouncilID",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "WeekIdentifier",
+    "data_type": "character",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "Capacity",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "CurrentCount",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": "0"
+  },
+  {
+    "table_name": "Councils",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Councils",
+    "column_name": "CouncilName",
+    "data_type": "text",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": "nextval('\"Delegate_BusRoutes_id_seq\"'::regclass)"
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "DelegateID",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "weekday_pickup_id",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "weekday_dropoff_id",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "weekend_pickup_id",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "weekend_dropoff_id",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "created_at",
+    "data_type": "timestamp without time zone",
+    "is_nullable": "YES",
+    "column_default": "now()"
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "Name",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "Email",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "School",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "Grade",
+    "data_type": "smallint",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "Week",
+    "data_type": "character",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "PaymentStatus",
+    "data_type": "USER-DEFINED",
+    "is_nullable": "YES",
+    "column_default": "'Pending'::payment_status_enum"
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "DelegateID",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "Phone",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "is_nullable": "YES",
+    "column_default": "now()"
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "CouncilID",
+    "data_type": "bigint",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "BusID",
+    "data_type": "bigint",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "DietaryNotes",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "CouncilWeekID",
+    "data_type": "bigint",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "DelegateID",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "Name",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "Relation",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "Phone",
+    "data_type": "text",
+    "is_nullable": "YES",
+    "column_default": null
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "busrouteid",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": "nextval('busroutes_busrouteid_seq'::regclass)"
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "routename",
+    "data_type": "character varying",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "daytype",
+    "data_type": "character varying",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "direction",
+    "data_type": "character varying",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "currentcount",
+    "data_type": "integer",
+    "is_nullable": "YES",
+    "column_default": "0"
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "WeekIdentifier",
+    "data_type": "character varying",
+    "is_nullable": "NO",
+    "column_default": "'A'::character varying"
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "id",
+    "data_type": "bigint",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "WeekName",
+    "data_type": "text",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "capacity",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": null
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "currentcount",
+    "data_type": "integer",
+    "is_nullable": "NO",
+    "column_default": "0"
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "WeekIdentifier",
+    "data_type": "character",
+    "is_nullable": "YES",
+    "column_default": null
+  }
+]
+2. Primary keys 
+[
+  {
+    "table_name": "Attendance",
+    "column_name": "id"
+  },
+  {
+    "table_name": "Buses",
+    "column_name": "id"
+  },
+  {
+    "table_name": "CouncilWeeks",
+    "column_name": "id"
+  },
+  {
+    "table_name": "Councils",
+    "column_name": "id"
+  },
+  {
+    "table_name": "Delegate_BusRoutes",
+    "column_name": "id"
+  },
+  {
+    "table_name": "Delegates",
+    "column_name": "id"
+  },
+  {
+    "table_name": "EmergencyContacts",
+    "column_name": "id"
+  },
+  {
+    "table_name": "busroutes",
+    "column_name": "busrouteid"
+  },
+  {
+    "table_name": "weeks",
+    "column_name": "id"
+  }
+]
+3. Foriegn keys 
+[
+  {
+    "source_table": "Attendance",
+    "source_column": "DelegateID",
+    "target_table": "Delegates",
+    "target_column": "DelegateID"
+  },
+  {
+    "source_table": "CouncilWeeks",
+    "source_column": "CouncilID",
+    "target_table": "Councils",
+    "target_column": "id"
+  },
+  {
+    "source_table": "Delegate_BusRoutes",
+    "source_column": "weekend_dropoff_id",
+    "target_table": "busroutes",
+    "target_column": "busrouteid"
+  },
+  {
+    "source_table": "Delegate_BusRoutes",
+    "source_column": "weekend_pickup_id",
+    "target_table": "busroutes",
+    "target_column": "busrouteid"
+  },
+  {
+    "source_table": "Delegate_BusRoutes",
+    "source_column": "weekday_dropoff_id",
+    "target_table": "busroutes",
+    "target_column": "busrouteid"
+  },
+  {
+    "source_table": "Delegate_BusRoutes",
+    "source_column": "DelegateID",
+    "target_table": "Delegates",
+    "target_column": "DelegateID"
+  },
+  {
+    "source_table": "Delegate_BusRoutes",
+    "source_column": "weekday_pickup_id",
+    "target_table": "busroutes",
+    "target_column": "busrouteid"
+  },
+  {
+    "source_table": "Delegates",
+    "source_column": "BusID",
+    "target_table": "Buses",
+    "target_column": "id"
+  },
+  {
+    "source_table": "Delegates",
+    "source_column": "CouncilWeekID",
+    "target_table": "CouncilWeeks",
+    "target_column": "id"
+  },
+  {
+    "source_table": "Delegates",
+    "source_column": "CouncilID",
+    "target_table": "Councils",
+    "target_column": "id"
+  },
+  {
+    "source_table": "EmergencyContacts",
+    "source_column": "DelegateID",
+    "target_table": "Delegates",
+    "target_column": "id"
+  }
+]
+4. Views
+[
+  {
+    "table_name": "Attendance_View"
+  }
+]
+5.functions 
+[
+  {
+    "routine_name": "decrement_week_count",
+    "data_type": "void"
+  },
+  {
+    "routine_name": "generate_delegate_id",
+    "data_type": "trigger"
+  },
+  {
+    "routine_name": "increment_bus_count",
+    "data_type": "void"
+  },
+  {
+    "routine_name": "increment_council_count",
+    "data_type": "void"
+  }
+]
