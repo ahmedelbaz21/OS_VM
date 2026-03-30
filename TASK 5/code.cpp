@@ -13,9 +13,8 @@ struct Process {
     int burst;
 };
 
-// FCFS 
-// This function simulates First Come First Serve scheduling
-double simulateFCFS(vector<Process>& processes) {
+// Fisrst Come First Serve (FCFS)
+double FCFS(vector<Process>& processes) {
 
     // sort processes by arrival time
     sort(processes.begin(), processes.end(),
@@ -42,9 +41,8 @@ double simulateFCFS(vector<Process>& processes) {
     return totalWaiting / processes.size();
 }
 
-// SJF
-// This function simulates Shortest Job First scheduling
-double simulateSJF(vector<Process> processes) {
+// Shortest Job First (SJF)
+double SJF(vector<Process> processes) {
 
     int n = processes.size();
     int time = 0;
@@ -89,7 +87,7 @@ double simulateSJF(vector<Process> processes) {
 
 // Round Robin
 // This function simulates Round Robin scheduling
-double simulateRoundRobin(vector<Process> processes, int quantum) {
+double RoundRobin(vector<Process> processes, int quantum) {
 
     queue<int> q;  // stores indices of processes
     int n = processes.size();
@@ -195,9 +193,9 @@ int main() {
     }
 
     // run simulations
-    double fcfs = simulateFCFS(processes);
-    double sjf = simulateSJF(processes);
-    double rr = simulateRoundRobin(processes, quantum);
+    double fcfs = FCFS(processes);
+    double sjf = SJF(processes);
+    double rr = RoundRobin(processes, quantum);
 
     cout << "\nAlgorithm , Average Waiting Time\n";
     cout << "FCFS , " << fcfs << endl;
