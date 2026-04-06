@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 
             if (fs::is_regular_file(entry.path())) {
                 // Get file size
-                auto fileSize = fs::file_size(entry.path());
+                auto fileSize = ::file_size(entry.path());
 
                 // Determine bin
                 int binIndex = fileSize / binWidth;
